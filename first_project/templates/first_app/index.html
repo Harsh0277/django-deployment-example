@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First App</title>
+    <link rel="stylesheet" href="{%static 'css/mystyle.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+    <h1>Welcome Here</h1>
+    <!--{{insert_me}}
+    <img src="{%static 'images/hba.jpg'%}" alt="Error!!!">-->
+    <div class="djangotwo">
+        {%if access_records%}
+        <table border="1">
+            <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+            </thead>
+
+            {%for acc in access_records%}
+            <tr>
+                <td>{{acc.name}}</td>
+                <td>{{acc.date}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+        {%else%}
+        <p>No access records found</p>
+        {%endif%}
+    </div>
+        </div>
+        </div>
+
+
+</body>
+</html>

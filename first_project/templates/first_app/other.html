@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{%extends "first_app/base.html"%}
+{%load my_extras%}
+{%block body_block%}
+<h1>Welcome to OTHER page</h1>
+<h2>It is template inheritance</h2>
+<h1>{{text|cutting:'hello'}}</h1>
+<h1>{{number|add:"99"}}</h1>
+{%endblock%}
